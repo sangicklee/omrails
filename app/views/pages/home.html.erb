@@ -1,12 +1,25 @@
-<div class="hero-unit">
-	<h1>Welcome to Sang Ick's Inaugral Rails Project!</h1>
-	<p>
-	</p>
-	<p>
-		This is my first
-		<%= link_to "Ruby on Rails","http://rubyonrails.com" %> appplication. How does it look?
-	</p>
-	<p>
-		<%= link_to "Sign Up Now", "#", class: "btn btn-primary btn large" %>
-	</p>
-</div>
+<% if user_signed_in? %>
+	<div class="hero-unit">
+		<h1>Thanks for signing in!</h1>
+		<p>
+		</p>
+		<p>
+			You are now logged into my First
+			<%= link_to "Ruby on Rails","http://rubyonrails.com" %> appplication.
+		</p>
+	
+	</div>
+<% else %>
+	<div class="hero-unit">
+		<h1>Welcome to Sang Ick's Inaugral Rails Project!</h1>
+		<p>
+		</p>
+		<p>
+			This is my first
+			<%= link_to "Ruby on Rails","http://rubyonrails.com" %> appplication. How does it look?
+		</p>
+		<p>
+			<%= link_to "Sign Up Now", new_user_registration_path, class: "btn btn-primary btn large" %>
+		</p>
+	</div>
+<% end %>
